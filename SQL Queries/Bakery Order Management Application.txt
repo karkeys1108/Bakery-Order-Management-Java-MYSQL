@@ -1,0 +1,55 @@
+Bakery Order Management Application 
+
+
+Class :
+
+1.Customer
+	customerDetails(Collection)
+	update customer in table 
+	delete customer in table 
+	
+2.BakeryItem :
+	subclass => Cake , Pastry ,Bread
+	Products not found exceptions for sub classes
+	update bakery items 
+	delete bakery items 
+3.Order :
+        orderManagement(Collection)
+        Interface(placeorder() , checkOrder(), cancelOrder())
+        OrderNotFoundException()
+	order placed data
+	cancel placed order 
+	thread for order concept 
+	 
+4.Pickup
+       Manage order pickups
+       from where to where 
+      
+
+
+
+1.new customer 
+2.open as existing customer  -> bakery items -->items 
+				order status    |  
+				order log       |
+                                   |            |
+                                   |            v
+				  BACK         select items to cart 
+			           |		|
+			           |		|
+				   |		|
+				   v		v
+				success -------------place order 
+
+
+
+
+
+
+
+
+
+
+
+
+

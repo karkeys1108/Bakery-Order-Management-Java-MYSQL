@@ -1,0 +1,52 @@
+Note :*Before using the query check the table alterations done in the last .*
+
+--CREATE DATABASE--
+create database BakeryOrderManagement;
+
+--USE DATABASE--
+use BakeryOrderManagement;
+
+
+--CRETEA CUSTOMER TABLE--
+create table customer(
+customer_id int auto_increment primary key,
+customer_name varchar(50) not null,
+customer_email varchar(50) not null,
+customer_phone varchar(50) not null,
+customer_address varchar(50) not null);
+
+--CREATE ORDER TABLE--
+
+create table orders(
+order_id int primary key auto_increment,
+customer_id int ,
+order_amount decimal (10,2) not null,
+order_date timestamp,
+foreign key (customer_id) references customer(customer_id)
+);
+
+--CREATE BAKERY ITEM TABLE--
+
+create table bakeryItems(
+item_id int primary key auto_increment,
+item_amount decimal (10,2) not null,
+item_name varchar(50) not null)
+;
+
+--CREATE PICKUP TABLE--
+
+create table pickup (
+pickup_id int primary key auto_increment,
+order_id int ,
+pickup_address varchar(100) not null,
+foreign key (order_id) references orders(order_id)
+);
+
+---ALTERATIONS--
+
+alter table  orders add column  order_status varchar(20) default 'Pending';
+ 
+alter table  add column pickup_time TIMESTAMP default CURRENT_TIMESTAMP;
+
+alter table bakeryitems add column item_name varchar(50) not null;
+
